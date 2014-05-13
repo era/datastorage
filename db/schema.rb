@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140512190011) do
 
   create_table "attachments", force: true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "mime_type"
     t.string   "path"
     t.text     "descrption"
     t.datetime "created_at"

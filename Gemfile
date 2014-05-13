@@ -8,6 +8,7 @@ gem 'sass', '3.2.1'
 gem 'shotgun', '0.9'
 gem 'sinatra', '1.3.5'
 gem 'aws-s3'
+gem 'json'
 
 group :development do
  gem 'sqlite3'
