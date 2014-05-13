@@ -4,11 +4,11 @@ class Attachment < ActiveRecord::Base
   validates :name, :mime_type, :path, presence: true
 
   def file=(upload)
-    mine_type = supported_type? upload[:type]
-    self.mime_type = mine_type['mime_type']
+    type = supported_type? upload[:type]
+    self.mime_type = type['mime_type']
     self.name = SecureRandom.hex + upload[:filename]
     self.path = File.join(Dir.pwd,
-            $config.file_properties.send(mine_type['type']).absolute_path,
+            $config.file_properties.send(type['type']).absolute_path,
             self.name)
 
     save_file(upload)
